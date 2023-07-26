@@ -1,14 +1,17 @@
 pipeline {
     agent {
-        dockerContainer image: 'python:3.10'
+        docker {
+            image 'python:3.10'
+        }
     }
 
-     stages {
+    stages {
         stage('Install Dependencies') {
             steps {
-                sh 'python3 --version'
+                sh 'python --version' // Corrected the Python version check
             }
         }
 
+        // Add more stages as needed...
     }
 }
