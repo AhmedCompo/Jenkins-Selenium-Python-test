@@ -4,6 +4,6 @@ pipeline {
     }
 
     stages {
-        // Your pipeline stages here...
+        sh python3 --version
     }
 }
