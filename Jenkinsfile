@@ -1,17 +1,9 @@
 pipeline {
     agent {
-        docker {
-            image 'python:3.10.6' // Choose the appropriate Python version
-        }
+        dockerContainer image: 'python:3.10'
     }
 
     stages {
-        stage('Install Dependencies') {
-            steps {
-                sh 'pip install selenium'
-            }
-        }
-
-        // Rest of your stages here...
+        // Your pipeline stages here...
     }
 }
