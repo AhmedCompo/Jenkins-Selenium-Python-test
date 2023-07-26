@@ -25,12 +25,7 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                // Activate the virtual environment and install dependencies
-                sh ". venv/bin/activate && pip install selenium"
-            }
-        }
+       
 
         stage('Version') {
             steps {
