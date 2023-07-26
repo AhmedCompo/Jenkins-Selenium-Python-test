@@ -3,11 +3,20 @@ pipeline {
 
     environment {
         // Define the Python version you want to use
-        pythonVersion = '3.10.6'
+        pythonVersion = '3.8'
     }
 
     stages {
-       
+        stage('Install Python') {
+            steps {
+                // Install Python using the package manager (Linux) or a script (Windows/macOS)
+                script {
+                    // For Linux (Debian/Ubuntu-based)
+                    sh "apt-get update -qq"
+                    sh "apt-get install -y python${pythonVersion} python${pythonVersion}-venv"
+                }
+            }
+        }
 
         stage('Setup Virtual Environment') {
             steps {
