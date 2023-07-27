@@ -1,17 +1,21 @@
 pipeline {
-    agent {
-        docker {
-            image 'python:3.10'
-        }
-    }
+    agent any
 
     stages {
-        stage('Install Dependencies') {
+        stage('Setup Virtual Environment') {
             steps {
-                sh 'python --version' // Corrected the Python version check
+                // Create a virtual environment named 'venv'
+                sh 'python3 -m venv venv'
             }
         }
 
-        // Add more stages as needed...
+        
+
+        stage('Run Tests') {
+            steps {
+                // Activate the virtual environment and run your Python script
+                sh '. venv/bin/activate && python test_sign_in.py'
+            }
+        }
     }
 }
