@@ -1,17 +1,16 @@
 pipeline {
     agent any
 
-    tools {
-        // Define the 'docker' tool to ensure Docker is available in the pipeline
-        // Set the 'Docker' label to match the name configured in Jenkins Global Tool Configuration
-        docker 'Docker'
-    }
-
     stages {
         stage('Check Docker Version') {
             steps {
-                // Run the 'docker --version' command
-                sh 'docker --version'
+                script {
+                    // Set the Docker path explicitly
+                    def dockerHome = tool name: 'Docker'
+                    env.PATH = "${dockerHome}/bin:${env.PATH}"
+                    // Run the 'docker --version' command
+                    sh 'docker --version'
+                }
             }
         }
 
