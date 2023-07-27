@@ -2,17 +2,12 @@ pipeline {
     agent any
 
     stages {
-        stage('Check Docker Version') {
+        stage('Install Selenium') {
             steps {
-                script {
-                    // Use Docker directly in the pipeline
-                    docker.image('docker:latest').inside {
-                        sh 'docker --version'
-                    }
-                }
+                sh 'apt update'
+                sh 'apt install -y python3-selenium'
             }
         }
 
-        // Add more stages as needed...
     }
 }
