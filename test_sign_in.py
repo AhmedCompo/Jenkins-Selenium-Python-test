@@ -1,8 +1,10 @@
 from selenium import webdriver
-import chromedriver_autoinstaller
+from selenium.webdriver.chrome.options import Options
 
-
+options = Options()
+options.add_argument("--headless")
 driver = webdriver.Chrome()
+
 
 driver.get("http://selenium.dev")
 
