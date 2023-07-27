@@ -5,11 +5,10 @@ pipeline {
         stage('Check Docker Version') {
             steps {
                 script {
-                    // Set the Docker path explicitly
-                    def dockerHome = tool name: 'Docker'
-                    env.PATH = "${dockerHome}/bin:${env.PATH}"
-                    // Run the 'docker --version' command
-                    sh 'docker --version'
+                    // Use Docker directly in the pipeline
+                    docker.image('docker:latest').inside {
+                        sh 'docker --version'
+                    }
                 }
             }
         }
