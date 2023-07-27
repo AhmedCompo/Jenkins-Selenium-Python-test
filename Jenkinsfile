@@ -7,7 +7,8 @@ pipeline {
         stage('Install dependencies') {
             steps {
                 // Install the Python dependencies from the requirements.txt file
-                sh 'pip install -r requirements.txt'
+                //sh 'pip install -r requirements.txt'
+                sh 'pip install selenium==4.4.3'
             }
         }
 
