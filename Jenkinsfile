@@ -2,10 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('Install Selenium') {
+        stage('run') {
             steps {
-                sh 'apt update'
-                sh 'apt install -y python3-selenium'
+                sh 'python3 test_sign_in.py'
+               
             }
         }
 
