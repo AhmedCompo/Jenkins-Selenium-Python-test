@@ -1,2 +1,2 @@
 selenium==4.10.0
-chromedriver-autoinstaller==0.6.2
+chromedriver-binary-auto==2.0.0
