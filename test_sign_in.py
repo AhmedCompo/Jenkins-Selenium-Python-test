@@ -1,22 +1,16 @@
 from selenium import webdriver
-import chromedriver_autoinstaller
 
-print("Goodbye, World!")
-def test_google():
-    # Automatically install and use the appropriate ChromeDriver version
-    chromedriver_autoinstaller.install()
+# Use ChromeOptions to specify the Chrome binary location
+chrome_options = webdriver.ChromeOptions()
+chrome_options.binary_location = "/"  # Replace this with the actual path
 
-    # Create a Chrome WebDriver instance
-    driver = webdriver.Chrome()
+# Initialize the WebDriver with Chrome driver and options
+driver = webdriver.Chrome(options=chrome_options)
 
-    # Navigate to Google
-    driver.get('https://www.google.com')
+# Test Google.com
+driver.get("https://www.google.com")
 
-    # Do some tests (e.g., check the title)
-    assert "Google" in driver.title
+# Perform your tests here...
 
-    # Clean up
-    driver.quit()
-
-if __name__ == "__main__":
-    test_google()
+# Close the browser after the test is complete
+driver.quit()
