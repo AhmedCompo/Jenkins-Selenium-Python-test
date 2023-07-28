@@ -5,7 +5,7 @@ pipeline {
         stage('New Environment') {
             steps {
                 sh 'python3 -m venv myenv'
-                sh 'source myenv/bin/activate'
+                sh '. myenv/bin/activate'
             }
         }
 
