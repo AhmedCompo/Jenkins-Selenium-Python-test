@@ -1,6 +1,7 @@
 from selenium import webdriver
 import chromedriver_autoinstaller
 
+print("Goodbye, World!")
 def test_google():
     # Automatically install and use the appropriate ChromeDriver version
     chromedriver_autoinstaller.install()
