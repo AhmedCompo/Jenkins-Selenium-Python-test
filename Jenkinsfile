@@ -2,7 +2,12 @@ pipeline {
     agent any
 
     stages {
-        
+        stage('New Environment') {
+            steps {
+                sh 'python3 -m venv myenv'
+                sh 'source myenv/bin/activate'
+            }
+        }
 
         stage('Install dependencies') {
             steps {
