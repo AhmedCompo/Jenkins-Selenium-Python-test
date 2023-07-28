@@ -1,16 +1,8 @@
 from selenium import webdriver
 
-# Use ChromeOptions to specify the Chrome binary location
-chrome_options = webdriver.ChromeOptions()
-chrome_options.binary_location = "/var/lib/jenkins/.local/bin"  # Replace this with the actual path
 
-# Initialize the WebDriver with Chrome driver and options
-driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome()
 
-# Test Google.com
-driver.get("https://www.google.com")
+driver.get("http://selenium.dev")
 
-# Perform your tests here...
-
-# Close the browser after the test is complete
 driver.quit()
