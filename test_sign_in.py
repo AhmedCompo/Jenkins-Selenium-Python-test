@@ -6,4 +6,5 @@ driver = webdriver.Chrome(options=options)
 
 #driver = webdriver.Chrome()
 
-driver.get("http://www.python.org")
+driver.get("nova.friendycar.com")
+print (driver.title)
