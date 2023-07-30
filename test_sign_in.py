@@ -98,7 +98,7 @@ def test_cases_from_excel(filename):
             email = email if email else ""
             password = password if password else ""
             print(f"Testing with email: ({email}) , password: ({password})")
-            SignIn(email)
+            SignIn(email,password)
             clear_old_values()
             print()
 
