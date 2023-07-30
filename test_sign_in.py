@@ -6,5 +6,5 @@ driver = webdriver.Chrome(options=options)
 
 #driver = webdriver.Chrome()
 
-driver.get("nova.friendycar.com")
+driver.get("https://nova.friendycar.com")
 print (driver.title)
