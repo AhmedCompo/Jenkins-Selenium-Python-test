@@ -1,5 +1,5 @@
 from selenium import webdriver
-ChromeOptions options = new ChromeOptions();
+options = new ChromeOptions();
 options.setExperimentalOption("prefs", chromePrefs);
 options.addArguments("--no-sandbox");
 options.addArguments("--headless"); //!!!should be enabled for Jenkins
